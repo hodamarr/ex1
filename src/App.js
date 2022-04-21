@@ -1,7 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 import { useRef } from 'react';
-import Loggedin from './LoggedIn/Loggedin';
+import Loggedin from './components/LoggedIn/Loggedin';
+import {BrowserRouter as router, Switch,Route } from 'react-router-dom'
 
 
 function App() {
@@ -22,16 +23,16 @@ const handleSubmit = async (e) => {
   setSuc(true);
 }
 
-
   return (
   <section>
+
         <div className="container-fluid" style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
          <div className="card" style={{ width: '600px', display: 'flex', marginRight: '10px' }}>
            <div className="card-body">
-             <h1 className="card-title">Create New Account</h1>
+             <h1 className="card-title">Welcome Back<span id="dot">.</span></h1>
              <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '10px' }}>
-                <span className="card-subtitle mb-2 text-muted" style={{ marginRight: '5px' }}>Already A Member?</span>
-               <a href="#" className="card-link">Log In</a>
+                <span className="card-subtitle mb-2 text-muted" style={{ marginRight: '5px' }}>Not A Member?</span>
+               <a href="#" className="card-link" id="login">Sign Up</a>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
@@ -43,6 +44,7 @@ const handleSubmit = async (e) => {
                        value = {user}
                        required
                      ></input> 
+                     <span>{errMsg}</span>
                 </div>
                 <div className="mb-3">
                   <input type="password" className="form-control"  placeholder='Password' 
@@ -51,10 +53,6 @@ const handleSubmit = async (e) => {
                        value = {password}
                        required></input>
                 </div>
-                <div className="mb-3 form-check">
-                  <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
-                   <label className="form-check-label" for="exampleCheck1">Check me out</label>
-               </div>
                <button type="submit" className="btn btn-primary">Submit</button>
               </form>
            </div>

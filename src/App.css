@@ -30,3 +30,12 @@
   font-size: x-large;
   
 }
+
+#login {
+ margin-top: -5px;
+ margin-left: 10px;
+}
+
+#dot {
+  color: #FF3399;
+}

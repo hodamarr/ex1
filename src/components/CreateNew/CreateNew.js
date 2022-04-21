@@ -10,16 +10,16 @@ function CreateNew() {
   const errRef = useRef();
   
   const [user,setUser] = useState('');
+  const [nick,setNick] = useState('');
   const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');  
-  const [suc, setSuc] = useState('');
 
 const handleSubmit = async (e) => {
   e.preventDefault();
   console.log(user, password);
   setUser('');
   setPassword('');
-  setSuc(true);
+
 }
 
   return (
@@ -44,6 +44,7 @@ const handleSubmit = async (e) => {
                        required
                      ></input> 
                 </div>
+
                 <div className="mb-3">
                   <input type="password" className="form-control"  placeholder='Password' 
                       ref={userRef}
@@ -51,6 +52,16 @@ const handleSubmit = async (e) => {
                        value = {password}
                        required></input>
                 </div>
+
+                <div className="mb-3">
+                  <input type="text" className="form-control"  placeholder='Nick Name' 
+                      ref={nickRef}
+                     onChange={(e) => setNick(e.target.value)}
+                       value = {nick}
+                       required></input>
+                </div>
+
+
                 <div className="mb-3 form-check">
                   <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
                    <label className="form-check-label" for="exampleCheck1">Check me out</label>
