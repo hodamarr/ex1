@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useRef } from 'react';
 import Loggedin from '../LoggedIn/Loggedin';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 
@@ -31,7 +32,7 @@ const handleSubmit = async (e) => {
              <h1 className="card-title">Create New Account</h1>
              <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '10px' }}>
                 <span className="card-subtitle mb-2 text-muted" style={{ marginRight: '5px' }}>Already A Member?</span>
-               <a href="#" className="card-link" id="login">Log In</a>
+                <Link to="/LogIn" className="card-link" id="login">Log In</Link>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
