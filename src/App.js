@@ -2,9 +2,9 @@ import './App.css';
 import { useState } from 'react';
 import { useRef } from 'react';
 import Loggedin from './components/LoggedIn/Loggedin';
-import {BrowserRouter as router, Switch,Route } from 'react-router-dom'
-
-
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import ChatScreen from './components/ChatScreen/ChatScreen';
+import CreateNew from './components/CreateNew/CreateNew';
 function App() {
 
   const userRef = useRef();
@@ -27,6 +27,14 @@ const handleSubmit = async (e) => {
   <section>
 
         <div className="container-fluid" style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/chats" element = {<ChatScreen/>}></Route>
+              <Route path="/" element = {<CreateNew/>}></Route>
+            </Routes>
+            <Link to='/'>Log Out</Link>
+            <Link to="/chats"> Done</Link>
+          </BrowserRouter>
          <div className="card" style={{ width: '600px', display: 'flex', marginRight: '10px' }}>
            <div className="card-body">
              <h1 className="card-title">Welcome Back<span id="dot">.</span></h1>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRef } from 'react';
-import Loggedin from './LoggedIn/Loggedin';
+import Loggedin from '../LoggedIn/Loggedin';
 
 
 
@@ -26,7 +26,7 @@ const handleSubmit = async (e) => {
   <section>
 
         <div className="container-fluid" style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
-         <div className="card" style={{ width: '600px', display: 'flex', marginRight: '10px' }}>
+         <div className="card" style={{ width: '600px', display: 'flex', marginRight: '10px', backgroundColor: 'red'}}>
            <div className="card-body">
              <h1 className="card-title">Create New Account</h1>
              <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '10px' }}>
@@ -55,18 +55,12 @@ const handleSubmit = async (e) => {
 
                 <div className="mb-3">
                   <input type="text" className="form-control"  placeholder='Nick Name' 
-                      ref={nickRef}
+                      // ref={nickRef}
                      onChange={(e) => setNick(e.target.value)}
                        value = {nick}
                        required></input>
                 </div>
-
-
-                <div className="mb-3 form-check">
-                  <input type="checkbox" className="form-check-input" id="exampleCheck1"></input>
-                   <label className="form-check-label" for="exampleCheck1">Check me out</label>
-               </div>
-               <button type="submit" className="btn btn-primary">Submit</button>
+               <button type="submit" className="btn btn-primary" >Submit</button>
               </form>
            </div>
          </div>
