@@ -27,7 +27,7 @@ const handleSubmit = async (e) => {
   <section>
 
         <div className="container-fluid" style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
-         <div className="card" style={{ width: '600px', display: 'flex', marginRight: '10px', backgroundColor: 'red'}}>
+         <div className="card" style={{ width: '600px', display: 'flex', marginRight: '10px'}}>
            <div className="card-body">
              <h1 className="card-title">Create New Account</h1>
              <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '10px' }}>

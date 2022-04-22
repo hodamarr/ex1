@@ -25,16 +25,14 @@ function App() {
 
   return (
     <section>
-      <div className="container-fluid" style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
         <BrowserRouter>
           <Routes>
             <Route path="/chats" element={<Loggedin />}></Route>
             <Route path="/LogIn" element={<LogInScreen />}></Route>
             <Route path="/" element={<CreateNew />}></Route>
           </Routes>
-          <Link to="/chats"> Done</Link>
+          
         </BrowserRouter>
-      </div>
     </section>
   );
 }

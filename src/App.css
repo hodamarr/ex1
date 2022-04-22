@@ -1,13 +1,16 @@
 
 
 *{
-  color : white;
-  background-color: #282c34;
+  color : black;
 
 }
 
-.App-body {
-  margin:10px;
+.container {
+  margin: 0px;
+}
+
+.body {
+  margin:0px;
 }
 
 
@@ -37,5 +40,5 @@
 }
 
 #dot {
-  color: #FF3399;
+  color: #0d6efd;
 }
