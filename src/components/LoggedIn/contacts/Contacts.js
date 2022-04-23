@@ -3,27 +3,26 @@ import mypic from "./mypic.png";
 
 function Contacts() {
     return (
-        <div style={{ float: "left", padding: "5px", clear:"both", width:"320px" }}>
+        <div style={{ float: "left", padding: "5px", clear:"both", width:"370px" }}>
 
             <ul className="nav flex-column" >
                 <span>
                     Hod Amar
-                    <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > new + </button>
-
+                    <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
                 </span>
-                <li className="nav-item" style={{ lineHeight: "50px" }}>
+                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
                     <ContactItem{...mypic} />
                 </li>
-                <li className="nav-item" style={{ lineHeight: "50px" }}>
+                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
                     <ContactItem{...mypic} />
                 </li>
-                <li className="nav-item" style={{ lineHeight: "50px" }}>
+                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
                     <ContactItem{...mypic} />
                 </li>
-                <li className="nav-item" style={{ lineHeight: "50px" }}>
+                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
                     <ContactItem{...mypic} />
                 </li>
-                <li className="nav-item" style={{ lineHeight: "50px" }}>
+                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
                     <ContactItem{...mypic} />
                 </li>
 
