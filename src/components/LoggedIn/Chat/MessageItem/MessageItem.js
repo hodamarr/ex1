@@ -1,7 +1,8 @@
-function MessageItem() {
+import { getPic } from "../../../../users";
+
+function MessageItem(props) {
     function ChooseMessageAlign(id){
         if(id==0){
-            //
             return "left";
         }
         else{
@@ -14,10 +15,10 @@ function MessageItem() {
     }
     }
     return (
-        <span className="navbar-text" onLoad={ConnectMessages(1,1)}>
-            <img id="userPic" src="mypic.png" width="40" height="40" style={{ float: ChooseMessageAlign(1), margin:"10px" }} ></img>
-            <div className="alert alert-primary" role="alert"  style={{ float: ChooseMessageAlign(1), marginLeft: "10px" }}>
-                first message
+        <span className="navbar-text" onLoad="">
+            <img id="userPic" src={props.self ? getPic(props.user) : props.contactpic} width="40" height="40" style={{ float: ChooseMessageAlign(props.self ? 1 : 0), margin:"10px" }} ></img>
+            <div className="alert alert-primary" role="alert"  style={{ float: ChooseMessageAlign(props.self ? 1 : 0), marginLeft: "10px" }}>
+                {props.content}
             </div>        
         </span>
 
