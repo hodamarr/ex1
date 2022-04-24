@@ -6,13 +6,13 @@ import Chat from "./Chat/Chat";
 
 function Loggedin() {
   return (
-    <div class="container" style={{padding:"0px"}}>
+    <div className="container" style={{padding:"0px"}}>
       <NavBar{...mypic} />
-      <div class="row" line-width="100%">
-        <div class="col-3" >
+      <div className="row" line-width="100%">
+        <div className="col-3" >
           <Contacts />
         </div>
-        <div class="col-9" style={{borderLeftStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
+        <div className="col-9" style={{borderLeftStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
           <Chat />
         </div>
       </div>
