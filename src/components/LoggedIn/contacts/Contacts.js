@@ -1,5 +1,4 @@
 import ContactItem from "./contactItem/ContactItem";
-import mypic from "./mypic.png";
 
 function Contacts() {
     return (
@@ -11,25 +10,25 @@ function Contacts() {
                     <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
                 </span>
                 <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{...mypic} />
+                    <ContactItem{..."mypic.png"} />
                 </li>
                 <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{...mypic} />
+                    <ContactItem{..."mypic.png"} />
                 </li>
                 <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{...mypic} />
+                    <ContactItem{..."mypic.png"} />
                 </li>
                 <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{...mypic} />
+                    <ContactItem{..."mypic.png"} />
                 </li>
                 <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{...mypic} />
+                    <ContactItem{..."mypic.png"} />
                 </li>
 
             </ul>
 
 
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">

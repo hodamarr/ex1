@@ -7,7 +7,7 @@ function Chat() {
 
     return (
 
-        <div class="container" style={{ paddin: "0px", margin: "20px" }}>
+        <div className="container" style={{ paddin: "0px", margin: "20px" }}>
             <h4> Hod Amar</h4>
             <PerfectScrollbar style={{right:"40px", color:"black"}}>
 
@@ -47,8 +47,8 @@ function Chat() {
             </ul>
             </PerfectScrollbar>
 
-            <nav class="navbar fixed-bottom navbar-light bg-light" style={{ width: "1115px" ,left:"380px" }}>
-                <div class="container-fluid">
+            <nav className="navbar fixed-bottom navbar-light bg-light" style={{ width: "1115px" ,left:"380px" }}>
+                <div className="container-fluid">
                 <form className="row g-3" >
                 <div className="col-auto">
                     <input type="text" className="form-control" id="inputMessage" placeholder="Write Here..." style={{ width: "930px" }}></input>
@@ -119,7 +119,7 @@ function Chat() {
                         <div className="modal-body">
                             <form>
                                 <div className="mb-3">
-                                    <label for="formFile" class="form-label">Default file input example</label>
+                                    <label for="formFile" className="form-label">Default file input example</label>
                                     <input className="form-control" type="file" id="formFile"></input>
                                 </div>
                             </form>
@@ -142,7 +142,7 @@ function Chat() {
                         <div className="modal-body">
                             <form>
                                 <div className="mb-3">
-                                    <label for="formFile" class="form-label">Default file input example</label>
+                                    <label for="formFile" className="form-label">Default file input example</label>
                                     <input className="form-control" type="file" id="formFile"></input>
                                 </div>
                             </form>
