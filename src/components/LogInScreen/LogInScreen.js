@@ -6,8 +6,8 @@ import { is_Exist, add_user } from '../../users'
 function LogInScreen(props) {
 
   const userRef = useRef();
-  const [user,setUser] = useState('');
-  const [password, setPassword] = useState('');
+  const [user,setUser] = useState('hadadi');
+  const [password, setPassword] = useState('a');
   const [userErrMsg, setUserErrMsg] = useState('');  
   const [passErrMsg, setPassErrMsg] = useState('');  
   const [suc, setSuc] = useState('');
@@ -55,7 +55,7 @@ const handleSubmit = async (e) => {
                     <h1 className="card-title">Welcome Back<span id="dot">.</span></h1>
                     <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '10px' }}>
                         <span className="card-subtitle mb-2 text-muted" style={{ marginRight: '5px' }}>Not A Member?</span>
-                        <Link to="/" className="card-link" id="login">Sign Up</Link>
+                        <Link to="/register" className="card-link" id="login">Sign Up</Link>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">

@@ -36,7 +36,7 @@ const handleSubmit = async (e) => {
   if(!userErrMsg && !nickErrMsg && !passErrMsg){
     add_user(user,nick,password,pic);
     setSucMsg("hey" + nick + "now you can log in :)");
-    <Link to="/LogIn" className="card-link" id="login">Log In</Link>
+    <Link to="/" className="card-link" id="login">Log In</Link>
   }
 }
   return (
@@ -48,7 +48,7 @@ const handleSubmit = async (e) => {
              <h1 className="card-title">Create New Account</h1>
              <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '10px' }}>
                 <span className="card-subtitle mb-2 text-muted" style={{ marginRight: '5px' }}>Already A Member?</span>
-                <Link to="/LogIn" className="card-link" id="login">Log In</Link>
+                <Link to="/" className="card-link" id="login">Log In</Link>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">

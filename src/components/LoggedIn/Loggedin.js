@@ -1,7 +1,6 @@
 import Contacts from "./contacts/Contacts";
 import "./Loggedin.css";
 import NavBar from "./NavBar/NavBar";
-import mypic from "./mypic.png";
 import Chat from "./Chat/Chat";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -23,13 +22,13 @@ function Loggedin(props) {
   
   return (
     <div className="container" style={{ padding: "0px" }}>
-      <NavBar{...mypic} />
+      <NavBar user={props.user} />
       <div className="row" line-width="100%">
-        <div className="col-3" >
-          <Contacts user={props.user} onSelectedChat={setChat} />
+        <div className="col-3" style={{height:"100vh"}} >
+          <Contacts user={props.user} onSelectedChat={setChat} updatedChat={chat}/>
         </div>
-        <div className="col-9" style={{ borderLeftStyle: "solid", borderWidth: "2px", borderColor: "lightGray" }}>
-          <Chat chat={chat} addMessage={addMessage}/>
+        <div className="col-9" style={{ borderLeftStyle: "solid", borderWidth: "2px", borderColor: "lightGray", height:"100vh",margin:"0px" }}>
+          <Chat chat={chat} addMessage={addMessage} user={props.user}/>
         </div>
       </div>
     </div>

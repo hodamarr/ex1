@@ -1,12 +1,10 @@
 import { useState, useRef } from "react";
 
-function AddImage() {
-    const [pictureInChat, SetPictureInChat] = useState();
+function AddImage(props) {
+    const [pictureInChat, setPictureInChat] = useState();
+
     const userRef = useRef();
 
-    function imageMessage(pictureInChat) {
-
-    }
     return (
         <div className="modal fade" id="ImagePick" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
@@ -19,14 +17,14 @@ function AddImage() {
                         <form>
                             <div className="mb-3">
                                 <input className="form-control" accept="image/*" type="file" id="imageFile" ref={userRef}
-                                    onChange={(e) => { SetPictureInChat(URL.createObjectURL(e.target.files[0])); }}
+                                    onChange={(e) => { setPictureInChat(URL.createObjectURL(e.target.files[0])); }}
                                 ></input>
                             </div>
                         </form>
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" className="btn btn-primary" onClick={imageMessage()} data-bs-dismiss="modal">Done</button>
+                        <button type="button" className="btn btn-primary" onClick={() => props.addNewPic(pictureInChat)} data-bs-dismiss="modal">Done</button>
                     </div>
                 </div>
             </div>

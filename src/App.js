@@ -6,6 +6,7 @@ import LogInScreen from './components/LogInScreen/LogInScreen';
 import { useState} from 'react';
 function App() {
 
+  // connected user's nickName
   const [user, setUser] = useState();
   console.log('user', user)
 
@@ -14,8 +15,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/chats" element={<Loggedin user={user} />}></Route>
-            <Route path="/LogIn" element={<LogInScreen setUser={setUser}/>}></Route>
-            <Route path="/" element={<CreateNew />}></Route>
+            <Route path="/" element={<LogInScreen setUser={setUser}/>}></Route>
+            <Route path="/register" element={<CreateNew />}></Route>
           </Routes>
           
         </BrowserRouter>

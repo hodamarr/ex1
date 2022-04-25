@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-function AddVideo() {
+function AddVideo(props) {
     const [videoInChat, SetVideoInChat] = useState();
     const userRef = useRef();
 
@@ -26,7 +26,7 @@ function AddVideo() {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" className="btn btn-primary" onClick={videoMessage()} data-bs-dismiss="modal">Done</button>
+                        <button type="button" className="btn btn-primary" onClick={() => props.addNewVid(videoInChat)}data-bs-dismiss="modal">Done</button>
                     </div>
                 </div>
             </div>

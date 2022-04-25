@@ -2,28 +2,28 @@
     "contacts" :[
         {
             "name":"um_koltom",
-            "pic":"mypic.png",
+            "pic":"/um_koltom.jpg",
             "msgs":[
                 {
                     "time":"20:35", "self":true, "type":"txt", "content":"hey its sarit hadad"
                 },
 
                 {
-                    "time":"20:37", "self":true, "type":"txt", "content":"answer meeeeee"
+                    "time":"20:37", "self":true, "type":"image", "content":"sarit.jpg"
                 },
 
                 {
-                    "time":"20:45", "self":false, "type":"txt", "content":"hey mami"
+                    "time":"20:45", "self":false, "type":"video", "content":"ummSong.mp4"
                 },
 
                 {
-                    "time":"20:50", "self":true, "type":"txt", "content":"how are u?"
+                    "time":"20:50", "self":true, "type":"audio", "content":"youAreAwesome.mp3"
                 }
             ]
         },
         {
             "name":"Eden ben zaken",
-            "pic":"defIcon.png",
+            "pic":"Eden.jpg",
             "msgs":[
                 {
                     "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"

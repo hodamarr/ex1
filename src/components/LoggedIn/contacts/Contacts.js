@@ -30,18 +30,23 @@ function Contacts(props) {
     },[props.user]);
     
         return (
-            <div style={{ float: "left", padding: "5px", clear:"both", width:"370px" }}>
+            <div style={{ padding: "5px"}}>
     
                 <ul className="nav flex-column" >
     
                     <span>
-                        Hod Amar
+                        {props.user}
                         <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
                     </span>
     
                     {(contacts || []).map((c, index) => <li key={index} className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
-                     <button onClick={() => props.onSelectedChat(c)}> 
-                       <ContactItem{...c} userpic = {props.user} /></button>
+                     <button className=" btn-secondary" style={{width:"100%", backgroundColor:"transparent", display:"flex", borderColor:"transparent"}} onClick={() => props.onSelectedChat(c)}> 
+                       <ContactItem 
+                       {...c} 
+                       userpic={props.user} 
+                       time={(c.name === props.updatedChat.name) ? props.updatedChat.msgs[props.updatedChat.msgs.length - 1].time : c.msgs[c.msgs.length - 1].time}
+                    />
+                     </button>
                     </li>
                     )}
     

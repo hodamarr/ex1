@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { getPic } from '../../../users';
 
-function NavBar(img) {
+function NavBar(props) {
     return (
         <div  style={{width:'100%'}}>
             <nav className="navbar navbar-dark bg-dark">
@@ -13,9 +14,9 @@ function NavBar(img) {
                             Messaging
                     </a>
                     <span className="navbar-text" >
-                    <img src={img} width="25" height="25" ></img>
-                    Hod Amar
-                    <Link to="/LogIn" className="card-link" id="logOut" style={{padding:'5px'}}>Log Out</Link>
+                    <img src={getPic(props.user)} width="25" height="25" style={{marginRight:"3px"}}></img>
+                    {props.user}
+                    <Link to="/" className="card-link" id="logOut" style={{margin:'5px'}}>Log Out</Link>
                     </span>
                 </div>
             </nav>

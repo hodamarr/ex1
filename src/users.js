@@ -1,8 +1,8 @@
 const users = 
 [
-    {name: "Eden_1994", nick:"Eden Ben Zaken", pass:"a1234567", pic:"defIcon.png", chats:""},
-    {name: "hadadi", nick:"Sarit Hadad", pass:"a", pic:"defIcon.png", chats:""},
-    {name: "um_koltom", nick:"UM-COLTOM", pass:"a1234567", pic:"defIcon.png", chats:""},
+    {name: "Eden_1994", nick:"Eden Ben Zaken", pass:"a1234567", pic:"Eden.jpg", chats:""},
+    {name: "hadadi", nick:"Sarit Hadad", pass:"a", pic:"sarit.jpg", chats:""},
+    {name: "um_koltom", nick:"UM-COLTOM", pass:"a1234567", pic:"Umm-Kulthum-thumb.jpg", chats:""},
     {name: "dik_la15", nick:"Dikla", pass:"a1234567", pic:"defIcon.png", chats:""},
     {name: "Zahava1415", nick:"Zehava Ben", pass:"a1234567", pic:"defIcon.png", chats:""}
 ]
