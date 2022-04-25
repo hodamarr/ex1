@@ -1,9 +1,8 @@
 import ContactItem from "./contactItem/ContactItem";
-import connected_user from "../../../common";
 import { useEffect, useState } from "react";
 
 const func = async (props) => {
-    const response = await fetch("chat_history/"+props.user+".json", {
+    const response = await fetch("chat_history/"+props.user.user+".json", {
         headers:
         {
             "Content-Type":"application/json",
@@ -15,7 +14,7 @@ const func = async (props) => {
     return data.contacts;
     }
 
-function Contacts(props) { 
+function Contacts(props) {
     const [contacts, setContacts] = useState([]);
     useEffect(() => {
     const f = async () => {
@@ -23,19 +22,17 @@ function Contacts(props) {
         setContacts(response);
     
     }
-    
-        if (props.user){
+        if (props.user.user){
             f();
         }
     },[props.user]);
-    
         return (
             <div style={{ float: "left", padding: "5px", clear:"both", width:"370px" }}>
     
                 <ul className="nav flex-column" >
     
                     <span>
-                        Hod Amar
+                    {props.user.nick}
                         <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
                     </span>
     

@@ -81,7 +81,7 @@ const handleSubmit = async (e) => {
                        <span>{nickErrMsg}</span>
                 </div>
                 <div className="App">
-            <input type="file" onChange={(e)=> {console.log(e.target.files);
+            <input type="file" onChange={(e)=> {
                   setPic(URL.createObjectURL(e.target.files[0]));}}  id="addphoto" required/>
             <img src={pic} />
               <br/>

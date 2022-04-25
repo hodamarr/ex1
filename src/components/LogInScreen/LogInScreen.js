@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-do
 import CreateNew from '../CreateNew/CreateNew';
 import Loggedin from '../LoggedIn/Loggedin';
 import { useState,useRef } from 'react';
-import { is_Exist, add_user } from '../../users'
+import { is_Exist, add_user, getNick, getPic } from '../../users'
 function LogInScreen() {
 
   const userRef = useRef();
@@ -10,8 +10,7 @@ function LogInScreen() {
   const [password, setPassword] = useState('');
   const [userErrMsg, setUserErrMsg] = useState('');  
   const [passErrMsg, setPassErrMsg] = useState('');  
-  const [suc, setSuc] = useState('');
-    const navi = useNavigate();
+  const navi = useNavigate();
 // Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
 // Username allowed of the dot (.), underscore (_), and hyphen (-).
 // The dot (.), underscore (_), or hyphen (-) must not be the first or last character.
@@ -32,12 +31,13 @@ const handleSubmit = async (e) => {
     let check = is_Exist(user, password)
     switch(check){
         case 1:
-            setSuc(true);
-            navi('/chats', {state: {user:user}});
+            const nick = getNick(user);
+            const pic = getPic(user);
+            navi('/chats', {state: {user:user, nick:nick, pic:pic}});
             break;
         case -1:
             setPassErrMsg("Wrong Password!")
-            break;
+            break; 
         case 0:
             setUserErrMsg("Username doesn't exist!")
             break;

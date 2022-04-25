@@ -9,18 +9,13 @@ function Chat(props) {
 const [pictureInChat, SetPictureInChat] = useState();
 const userRef = useRef();
 
-    function imageMessage(pictureInChat) {
-
-    }
     return (
-
         <div className="container" style={{ padding: "0px", margin: "20px" }}>
-
             {/*messages history*/}
-            <h4> Hod Amar</h4>
+            <h4> {props.chat.name}</h4>
             <ul className="nav flex-column">
-                {console.log("a" , props.chat.msgs)}
-                {(props.chat.msgs || []).map(m => <li className="nav-item" style={{ lineHeight: "20px" }}>
+                {(props.chat.msgs || []).map(m =>
+                <li className="nav-item" style={{ lineHeight: "20px" }}>
                     <MessageItem {...m} contactpic = {props.chat.pic}/>
                 </li>)}
             </ul>

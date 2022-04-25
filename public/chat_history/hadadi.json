@@ -1,19 +1,19 @@
 {
     "contacts" :[
         {
-            "name":"um_koltom",
-            "pic":"mypic.png",
+            "name":"UM coltom",
+            "pic":"/users_pic/um_koltom.jpeg",
             "msgs":[
                 {
-                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sarit hadad"
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey UM-COLTOM"
                 },
 
                 {
-                    "time":"20:37", "self":true, "type":"txt", "content":"answer meeeeee"
+                    "time":"20:37", "self":true, "type":"txt", "content":"it's Sarit Hadad"
                 },
 
                 {
-                    "time":"20:45", "self":false, "type":"txt", "content":"hey mami"
+                    "time":"20:45", "self":false, "type":"txt", "content":"Hey mami!"
                 },
 
                 {
@@ -23,22 +23,69 @@
         },
         {
             "name":"Eden ben zaken",
-            "pic":"defIcon.png",
+            "pic":"/users_pic/eden1994.jpeg",
             "msgs":[
                 {
-                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
+                    "time":"20:01", "self":false, "type":"txt", "content":"Haim-Sheli, i liked your new song!"
                 },
 
                 {
-                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
+                    "time":"20:10", "self":true, "type":"txt", "content":"oh! thanks babe"
                 },
 
                 {
-                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
+                    "time":"20:11", "self":true, "type":"txt", "content":"How are u?"
                 },
 
                 {
-                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
+                    "time":"20:14", "self":false, "type":"txt", "content":"amazing!"
+                }
+            ]
+        },
+        {
+            "name":"Zehava Ben",
+            "pic":"/users_pic/zehava1.png",
+            "msgs":[
+                {
+                    "time":"19:35", "self":true, "type":"txt", "content":"Let's do concert together!"
+                }
+            ]
+        },
+        {
+            "name":"Ofra Haza",
+            "pic":"/users_pic/offrahaz.jpeg",
+            "msgs":[
+                {
+                    "time":"16:35", "self":true, "type":"txt", "content":"I MISS YOU OFFRA!"
+                },
+
+                {
+                    "time":"16:37", "self":true, "type":"txt", "content":"you are better then YARDENA"
+                },
+
+                {
+                    "time":"16:45", "self":false, "type":"txt", "content":"oh thanks, miss you too"
+                },
+
+                {
+                    "time":"16:50", "self":true, "type":"txt", "content":"how are u?"
+                }
+            ]
+        },
+        {
+            "name":"Dikla",
+            "pic":"/users_pic/dikla15.jpeg",
+            "msgs":[
+                {
+                    "time":"13:35", "self":true, "type":"txt", "content":"can you help me with REACT?"
+                },
+
+                {
+                    "time":"13:45", "self":false, "type":"txt", "content":"ask Google.com :)"
+                },
+
+                {
+                    "time":"13:50", "self":true, "type":"txt", "content":"you are so rude!"
                 }
             ]
         }

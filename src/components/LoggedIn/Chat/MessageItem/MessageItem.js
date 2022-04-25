@@ -14,6 +14,7 @@ function MessageItem(props) {
         }
     }
     }
+    
     return (
         <span className="navbar-text" >
             <img id="userPic" src={props.self ? getPic(props.user) : props.contactpic} width="40" height="40" style={{ float: ChooseMessageAlign(props.self ? 1 : 0), margin:"10px" }} ></img>

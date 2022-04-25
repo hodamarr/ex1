@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-function NavBar(img) {
+function NavBar(props) {
     return (
         <div  style={{width:'100%'}}>
             <nav className="navbar navbar-dark bg-dark">
@@ -13,8 +13,8 @@ function NavBar(img) {
                             Messaging
                     </a>
                     <span className="navbar-text" >
-                    <img src={img} width="25" height="25" ></img>
-                    Hod Amar
+                    <img src={props.pic} width="25" height="25" ></img>
+                    {props.nick}
                     <Link to="/LogIn" className="card-link" id="logOut" style={{padding:'5px'}}>Log Out</Link>
                     </span>
                 </div>
