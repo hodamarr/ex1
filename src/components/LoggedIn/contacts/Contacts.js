@@ -1,31 +1,52 @@
 import ContactItem from "./contactItem/ContactItem";
+import connected_user from "../../../common";
+import { useEffect, useState } from "react";
 
-function Contacts() {
-    return (
-        <div style={{ float: "left", padding: "5px", clear:"both", width:"370px" }}>
+const func = async (props) => {
+    const response = await fetch("chat_history/"+props.user+".json", {
+        headers:
+        {
+            "Content-Type":"application/json",
+            Accept:"application/json"
+        }
+    });
+    
+    const data = await response.json();
+    return data.contacts;
+    }
 
-            <ul className="nav flex-column" >
-                <span>
-                    Hod Amar
-                    <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
-                </span>
-                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{..."mypic.png"} />
-                </li>
-                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{..."mypic.png"} />
-                </li>
-                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{..."mypic.png"} />
-                </li>
-                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{..."mypic.png"} />
-                </li>
-                <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }}>
-                    <ContactItem{..."mypic.png"} />
-                </li>
-
-            </ul>
+function Contacts(props) { 
+    const [contacts, setContacts] = useState([]);
+    useEffect(() => {
+    const f = async () => {
+        const response = await func(props);
+        setContacts(response);
+    
+    }
+    
+        if (props.user){
+            f();
+        }
+    },[props.user]);
+    
+        return (
+            <div style={{ float: "left", padding: "5px", clear:"both", width:"370px" }}>
+    
+                <ul className="nav flex-column" >
+    
+                    <span>
+                        Hod Amar
+                        <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
+                    </span>
+    
+                    {(contacts || []).map(c => <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
+                     <button onClick={() => props.onSelectedChat(c)}> 
+                       <ContactItem{...c} userpic = {props.user} /></button>
+                    </li>
+                    )}
+    
+                </ul>
+    
 
 
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

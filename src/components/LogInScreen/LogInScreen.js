@@ -33,8 +33,7 @@ const handleSubmit = async (e) => {
     switch(check){
         case 1:
             setSuc(true);
-            navi('/chats');
-                console.log("hey, username : "+ user );
+            navi('/chats', {state: {user:user}});
             break;
         case -1:
             setPassErrMsg("Wrong Password!")
