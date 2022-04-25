@@ -8,14 +8,14 @@ function MessageItem(props) {
         else{
             return "right";
         }
-    const ConnectMessages = function (newId, lastId){
+    function ConnectMessages (newId, lastId){
         if(newId == lastId){
             document.getElementById("userPic").style.visibility="hidden";  
         }
     }
     }
     return (
-        <span className="navbar-text" onLoad="">
+        <span className="navbar-text" onLoad={ConnectMessages(props.self,)}>
             <img id="userPic" src={props.self ? getPic(props.user) : props.contactpic} width="40" height="40" style={{ float: ChooseMessageAlign(props.self ? 1 : 0), margin:"10px" }} ></img>
             <div className="alert alert-primary" role="alert"  style={{ float: ChooseMessageAlign(props.self ? 1 : 0), marginLeft: "10px" }}>
                 {props.content}
