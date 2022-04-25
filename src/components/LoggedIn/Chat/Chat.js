@@ -9,6 +9,10 @@ function Chat(props) {
 const [pictureInChat, SetPictureInChat] = useState();
 const userRef = useRef();
 
+console.log('msgs', props.chat.msgs);
+
+    const [msg, setMsg] = useState('');
+
     function imageMessage(pictureInChat) {
 
     }
@@ -19,8 +23,7 @@ const userRef = useRef();
             {/*messages history*/}
             <h4> Hod Amar</h4>
             <ul className="nav flex-column">
-                {console.log("a" , props.chat.msgs)}
-                {(props.chat.msgs || []).map(m => <li className="nav-item" style={{ lineHeight: "20px" }}>
+                {(props.chat.msgs || []).map((m, index) => <li key={index} className="nav-item" style={{ lineHeight: "20px" }}>
                     <MessageItem {...m} contactpic = {props.chat.pic}/>
                 </li>)}
             </ul>
@@ -28,12 +31,16 @@ const userRef = useRef();
             {/*writing panel*/}
             <nav className="navbar fixed-bottom navbar-light bg-light" style={{ width: "1115px", left: "380px" }}>
                 <div className="container-fluid">
-                    <form className="row g-3" >
+                    <div className="row g-3">
                         <div className="col-auto">
-                            <input type="text" className="form-control" id="inputMessage" placeholder="Write Here..." style={{ width: "930px" }}></input>
+                            <input placeholder="Write Here..." style={{ width: "930px" }} value={msg} onChange={e => setMsg(e.target.value)}></input>
                         </div>
                         <div className="col-auto">
-                            <button type="submit" className="btn btn-primary mb-3">Send</button>
+                            <button type="button" onClick={() => {
+                                const newMessage = { content: msg, time: "22-22", self: true, type: 'txt' };
+                                props.addMessage(newMessage);
+                                setMsg('');
+                            }} className="btn btn-primary mb-3">Send</button>
                         </div>
                         <div className="col-auto">
                             <a className="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -42,7 +49,7 @@ const userRef = useRef();
                                 </svg>
                             </a>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </nav>
 

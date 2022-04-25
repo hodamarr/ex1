@@ -39,7 +39,7 @@ function Contacts(props) {
                         <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
                     </span>
     
-                    {(contacts || []).map(c => <li className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
+                    {(contacts || []).map((c, index) => <li key={index} className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
                      <button onClick={() => props.onSelectedChat(c)}> 
                        <ContactItem{...c} userpic = {props.user} /></button>
                     </li>

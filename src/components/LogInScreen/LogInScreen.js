@@ -3,7 +3,7 @@ import CreateNew from '../CreateNew/CreateNew';
 import Loggedin from '../LoggedIn/Loggedin';
 import { useState,useRef } from 'react';
 import { is_Exist, add_user } from '../../users'
-function LogInScreen() {
+function LogInScreen(props) {
 
   const userRef = useRef();
   const [user,setUser] = useState('');
@@ -33,7 +33,8 @@ const handleSubmit = async (e) => {
     switch(check){
         case 1:
             setSuc(true);
-            navi('/chats', {state: {user:user}});
+            props.setUser(user);
+            navi('/chats');
             break;
         case -1:
             setPassErrMsg("Wrong Password!")
