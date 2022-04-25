@@ -1,0 +1,49 @@
+{
+    "contacts" :[
+        {
+            "name":"um_koltom",
+            "pic":"mypic.png",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sarit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"txt", "content":"answer meeeeee"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"txt", "content":"hey mami"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"txt", "content":"how are u?"
+                }
+            ]
+        },
+        {
+            "name":"Eden ben zaken",
+            "pic":"defIcon.png",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
+                }
+            ]
+        }
+
+
+        
+    ]
+}
