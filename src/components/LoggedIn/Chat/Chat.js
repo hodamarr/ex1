@@ -1,6 +1,6 @@
 import MessageItem from "./MessageItem/MessageItem";
 import "./Chat.css"
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import AddImage from "./addMessageType/AddImage";
 import AddVideo from "./addMessageType/AddVideo";
 import AddRecord from "./addMessageType/AddRecord";
@@ -9,10 +9,9 @@ function Chat(props) {
     const [pictureInChat, SetPictureInChat] = useState();
     const [showMenu, setShowMenu] = useState(false);
     const userRef = useRef();
-
-    console.log('msgs', props.chat.msgs);
-
+    var currentTimeDate = new Date();
     const [msg, setMsg] = useState('');
+
 
     // function scrollToBottom (id) {
     //     console.log("name", id);
@@ -44,7 +43,7 @@ function Chat(props) {
                                 </div>
                                 <div className="col-auto">
                                     <button type="button" onClick={() => {
-                                        const newMessage = { content: msg, time: "22-22", self: true, type: 'txt' };
+                                        const newMessage = {chatuser:props.chat.name, content: msg, time: currentTimeDate.getHours().toString() + ":" + currentTimeDate.getMinutes().toString(), self: true, type: 'txt' };
                                         props.addMessage(newMessage);
                                         setMsg('');
                                     }} className="btn btn-primary mb-3">Send</button>

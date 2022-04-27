@@ -4,9 +4,13 @@ import NavBar from "./NavBar/NavBar";
 import Chat from "./Chat/Chat";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import { getNick, getName } from "../../users";
+import { addMsgHistory } from "../../history";
 
 function Loggedin(props) {
+
+  
+
   //const location = useLocation();
   const [chat, setChat] = useState({});
 
@@ -17,7 +21,6 @@ function Loggedin(props) {
   }
 
   useEffect(() => {
-    console.log('chat msg', chat.msgs)
   }, [chat])
   
   return (

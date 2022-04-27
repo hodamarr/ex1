@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { add_user, is_Exist } from '../../users';
+import { add_user, is_Exist, isNameExist } from '../../users';
 
 
 function CreateNew() {
@@ -25,8 +25,11 @@ function CreateNew() {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
+  if(isNameExist(user)){
+    setUserErrMsg("This Username is already taken!")
+  }
   const nameregex = /^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$/;
-  if (!nameregex.test(user)){setUserErrMsg("username should contain 5-20 chars")}
+  if (!nameregex.test(user)){setUserErrMsg("username should contain 5-20 chars!")}
 
   const passwordregex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   if (!passwordregex.test(password)){setPassErrMsg("password should contain 8 chars, at least one letter and one number")}

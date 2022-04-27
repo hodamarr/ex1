@@ -1,0 +1,112 @@
+{
+    "contacts" :[
+        {
+            "name":"Um-Coltom",
+            "pic":"userphoto/um_koltom.jpeg",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sarit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"image", "content":"sarit.jpg"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"video", "content":"ummSong.mp4"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"audio", "content":"youAreAwesome.mp3"
+                }
+            ]
+        },
+        {
+            "name":"Eden ben zaken",
+            "pic":"userphoto/eden1994.jpeg",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
+                }
+            ]
+        },
+        {
+            "name":"Zehava Ben",
+            "pic":"userphoto/zehava1.png",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
+                }
+            ]
+        },
+        {
+            "name":"Dikla",
+            "pic":"userphoto/dikla15.jpeg",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
+                }
+            ]
+        },
+        {
+            "name":"Ofra Haza",
+            "pic":"userphoto/offrahaz.jpeg",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
+                }
+            ]
+        }
+
+
+        
+    ]
+}
