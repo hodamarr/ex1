@@ -6,8 +6,8 @@ import { is_Exist, add_user } from '../../users'
 function LogInScreen(props) {
 
   const userRef = useRef();
-  const [user,setUser] = useState('hadadi');
-  const [password, setPassword] = useState('a');
+  const [user,setUser] = useState('');
+  const [password, setPassword] = useState('');
   const [userErrMsg, setUserErrMsg] = useState('');  
   const [passErrMsg, setPassErrMsg] = useState('');  
   const [suc, setSuc] = useState('');

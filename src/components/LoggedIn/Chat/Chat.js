@@ -12,7 +12,6 @@ function Chat(props) {
     var currentTimeDate = new Date();
     const [msg, setMsg] = useState('');
 
-
     // function scrollToBottom (id) {
     //     console.log("name", id);
     //     var div = document.getElementById(id);
@@ -43,7 +42,7 @@ function Chat(props) {
                                 </div>
                                 <div className="col-auto">
                                     <button type="button" onClick={() => {
-                                        const newMessage = {chatuser:props.chat.name, content: msg, time: currentTimeDate.getHours().toString() + ":" + currentTimeDate.getMinutes().toString(), self: true, type: 'txt' };
+                                        const newMessage = { content: msg, time: currentTimeDate.getHours().toString() + ":" + currentTimeDate.getMinutes().toString(), self: true, type: 'txt' };
                                         props.addMessage(newMessage);
                                         setMsg('');
                                     }} className="btn btn-primary mb-3">Send</button>

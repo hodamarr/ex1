@@ -1,32 +1,9 @@
 import ContactItem from "./contactItem/ContactItem";
 import { getNick, getPic } from "../../../users";
 import { useEffect, useState } from "react";
-const func = async (props) => {
-    const response = await fetch("chat_history/"+props.user+".json", {
-        headers:
-        {
-            "Content-Type":"application/json",
-            Accept:"application/json"
-        }
-    });
-    
-    const data = await response.json();
-    return data.contacts;
-    }
 
 function Contacts(props) { 
-    const [contacts, setContacts] = useState([]);
-    useEffect(() => {
-    const f = async () => {
-        const response = await func(props);
-        setContacts(response);
-    
-    }
-    
-        if (props.user){
-            f();
-        }
-    },[props.user]);
+    console.log('props.contacts', props.contacts);
 
     const nick = getNick(props.user);
     const pic = getPic(props.user);
@@ -41,14 +18,14 @@ function Contacts(props) {
                         <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
                     </span>
     
-                    {(contacts || []).map((c, index) => <li key={index} className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
-                     <button className=" btn-secondary" style={{width:"100%", backgroundColor:"transparent", display:"flex", borderColor:"transparent"}} onClick={() => {props.onSelectedChat(c);
+                    {(props.contacts || []).map((c, index) => <li key={index} className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
+                     <button className=" btn-secondary" style={{width:"100%", backgroundColor:"transparent", display:"flex", borderColor:"transparent"}} onClick={() => {props.onSelectedChat(c.name);
                     
                       
                      }}> 
                        <ContactItem 
                        {...c} 
-                       time={(c.name === props.updatedChat.name) ? props.updatedChat.msgs[props.updatedChat.msgs.length - 1].time : c.msgs[c.msgs.length - 1].time}
+                       time={c.msgs[c.msgs.length - 1].time}
                     />
                      </button>
                     </li>
