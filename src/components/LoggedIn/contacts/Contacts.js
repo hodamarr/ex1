@@ -13,6 +13,7 @@ function Contacts(props) {
                 delete listOfName[listOfName.indexOf(u)];
             }
         }
+        
     }
     function check_time(c){
         console.log("c",c);
