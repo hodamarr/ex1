@@ -8,7 +8,6 @@ function App() {
 
   // connected user's nickName
   const [user, setUser] = useState();
-  console.log('user', user)
 
   return (
     <section>

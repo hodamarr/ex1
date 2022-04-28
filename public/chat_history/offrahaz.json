@@ -9,20 +9,20 @@
                 },
 
                 {
-                    "time":"20:37", "self":true, "type":"image", "content":"sarit.jpg"
+                    "time":"20:37", "self":true, "type":"image", "content":"userphoto/hadadi.jpeg"
                 },
 
                 {
-                    "time":"20:45", "self":false, "type":"video", "content":"ummSong.mp4"
+                    "time":"20:45", "self":false, "type":"video", "content":"video1.mp4"
                 },
 
                 {
-                    "time":"20:50", "self":true, "type":"audio", "content":"youAreAwesome.mp3"
+                    "time":"20:50", "self":true, "type":"audio", "content":"audio1.mp3"
                 }
             ]
         },
         {
-            "name":"Eden",
+            "name":"Eden Ben Zaken",
             "pic":"userphoto/eden1994.jpeg",
             "msgs":[
                 {
@@ -43,8 +43,8 @@
             ]
         },
         {
-            "name":"Zehava Ben",
-            "pic":"userphoto/zehava1.png",
+            "name":"Sarit Hadad",
+            "pic":"userphoto/hadadi.jpeg",
             "msgs":[
                 {
                     "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
@@ -85,8 +85,8 @@
             ]
         },
         {
-            "name":"Ofra Haza",
-            "pic":"userphoto/offrahaz.jpeg",
+            "name":"Zehava Ben",
+            "pic":"userphoto/Zahava1415.jpeg",
             "msgs":[
                 {
                     "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"

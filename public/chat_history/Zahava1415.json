@@ -22,8 +22,29 @@
             ]
         },
         {
-            "name":"Zehava Ben",
-            "pic":"userphoto/Zahava1415.jpeg",
+            "name":"Eden Ben Zaken",
+            "pic":"userphoto/eden1994.jpeg",
+            "msgs":[
+                {
+                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
+                },
+
+                {
+                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
+                },
+
+                {
+                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
+                },
+
+                {
+                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
+                }
+            ]
+        },
+        {
+            "name":"Sarit Hadad",
+            "pic":"userphoto/hadadi.jpeg",
             "msgs":[
                 {
                     "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
@@ -64,29 +85,8 @@
             ]
         },
         {
-            "name":"Eden Ben Zaken",
-            "pic":"userphoto/eden1994.jpeg",
-            "msgs":[
-                {
-                    "time":"20:35", "self":true, "type":"txt", "content":"way way so hot"
-                },
-
-                {
-                    "time":"20:37", "self":true, "type":"txt", "content":"we went to the Ir Bira of the Zaphon"
-                },
-
-                {
-                    "time":"20:45", "self":false, "type":"txt", "content":"jin tonik"
-                },
-
-                {
-                    "time":"20:50", "self":true, "type":"txt", "content":"and MOUABET"
-                }
-            ]
-        },
-        {
             "name":"Offra Haza",
-            "pic":"userphoto/Zahava1415.jpeg",
+            "pic":"userphoto/offrahaz.jpeg",
             "msgs":[
                 {
                     "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
@@ -105,7 +105,8 @@
                 }
             ]
         }
-            
-    
+
+
+        
     ]
 }

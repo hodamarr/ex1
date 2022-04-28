@@ -4,28 +4,31 @@ import { useEffect, useState } from "react";
 
 
 function Contacts(props) { 
+    const nick = getNick(props.user);
+    const [opt, setOpt] = useState("");
     const listOfName = [];
     listOfSortedNames(listOfName);
+    
     for(var u of listOfName){
         for (var k of props.contacts){
-            var x = k.name
+            var x = k.name;
+
             if(x === getNick(u)){
                 delete listOfName[listOfName.indexOf(u)];
             }
         }
-        
+        if(getNick(u) === getNick(props.user)) {
+            delete listOfName[listOfName.indexOf(u)];
+        }
     }
+
     function check_time(c){
-        console.log("c",c);
-        console.log("c....",c.msgs[c.msgs.length - 1].time);
             if(!c.msgs[c.msgs.length - 1]){
                 return "";
             }
              return c.msgs[c.msgs.length - 1].time;
     }
 
-    const [opt, setOpt] = useState("");
-    const nick = getNick(props.user);
 
         return (
             <div style={{ padding: "5px"}}>
@@ -64,7 +67,7 @@ function Contacts(props) {
                         <div className="modal-body">
                             <form>
                                 <div className="mb-3">
-                                <select class="form-select" multiple aria-label="multiple select example" onChange={(e) => {const selected = e.target.value;
+                                <select className="form-select" multiple aria-label="multiple select example" onChange={(e) => {const selected = e.target.value;
                                 setOpt(selected);
                                 }}>
                                 {(listOfName || []).map((i, index) => <option value={i}>{getNick(i)}</option>)}

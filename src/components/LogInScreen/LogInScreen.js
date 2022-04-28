@@ -1,52 +1,52 @@
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import CreateNew from '../CreateNew/CreateNew';
 import Loggedin from '../LoggedIn/Loggedin';
-import { useState,useRef } from 'react';
+import { useState, useRef } from 'react';
 import { is_Exist, add_user } from '../../users'
 function LogInScreen(props) {
 
-  const userRef = useRef();
-  const [user,setUser] = useState('');
-  const [password, setPassword] = useState('');
-  const [userErrMsg, setUserErrMsg] = useState('');  
-  const [passErrMsg, setPassErrMsg] = useState('');  
-  const [suc, setSuc] = useState('');
-const navi = useNavigate();
-// Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
-// Username allowed of the dot (.), underscore (_), and hyphen (-).
-// The dot (.), underscore (_), or hyphen (-) must not be the first or last character.
-// The dot (.), underscore (_), or hyphen (-) does not appear consecutively, e.g., java..regex
-// The number of characters must be between 5 to 20.
+    const userRef = useRef();
+    const [user, setUser] = useState('');
+    const [password, setPassword] = useState('');
+    const [userErrMsg, setUserErrMsg] = useState('');
+    const [passErrMsg, setPassErrMsg] = useState('');
+    const [suc, setSuc] = useState('');
+    const navi = useNavigate();
+    // Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
+    // Username allowed of the dot (.), underscore (_), and hyphen (-).
+    // The dot (.), underscore (_), or hyphen (-) must not be the first or last character.
+    // The dot (.), underscore (_), or hyphen (-) does not appear consecutively, e.g., java..regex
+    // The number of characters must be between 5 to 20.
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  const nameregex = /^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$/;
-  if (!nameregex.test(user)){setUserErrMsg("username should contain 5-20 chars")}
+        const nameregex = /^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$/;
+        if (!nameregex.test(user)) { setUserErrMsg("username should contain 5-20 chars") }
 
-  const passwordregex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  // minimum 8 chars, one letter one number.
-  if (!passwordregex.test(password)){setPassErrMsg("password should contain 8 chars, at least one letter and one number")}
+        const passwordregex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        // minimum 8 chars, one letter one number.
+        if (!passwordregex.test(password)) { setPassErrMsg("password should contain 8 chars, at least one letter and one number") }
 
-  if(!userErrMsg && !passErrMsg){
-    let check = is_Exist(user, password)
-    switch(check){
-        case 1:
-            setSuc(true);
-            props.setUser(user);
-            navi('/chats');
-            break;
-        case -1:
-            setPassErrMsg("Wrong Password!")
-            break;
-        case 0:
-            setUserErrMsg("Username doesn't exist!")
-            break;
+        if (!userErrMsg && !passErrMsg) {
+            let check = is_Exist(user, password)
+            switch (check) {
+                case 1:
+                    setSuc(true);
+                    props.setUser(user);
+                    navi('/chats');
+                    break;
+                case -1:
+                    setPassErrMsg("Wrong Password!")
+                    break;
+                case 0:
+                    setUserErrMsg("Username doesn't exist!")
+                    break;
 
+            }
+
+        }
     }
-
-  }
-}
 
     return (
         <div className="container-fluid" style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
@@ -62,25 +62,24 @@ const handleSubmit = async (e) => {
                             <input type="text"
                                 className="form-control"
                                 placeholder='User Name'
-                              ref={userRef}
-                             onChange={(e) => setUser(e.target.value)}
-                               value = {user}
-                               required
+                                ref={userRef}
+                                onChange={(e) => setUser(e.target.value)}
+                                value={user}
+                                required
                             ></input>
                             <span>{userErrMsg}</span>
                         </div>
                         <div className="mb-3">
                             <input type="password" className="form-control" placeholder='Password'
-                               ref={userRef}
-                              onChange={(e) => setPassword(e.target.value)}
-                                value = {password}
+                                ref={userRef}
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
                                 required
                             ></input>
                             <span>{passErrMsg}<br></br></span>
                         </div>
-                        
-                        <button type="submit" className="btn btn-primary" 
-                        //need to add as part of the onClick function to change path to "./chats"
+
+                        <button type="submit" className="btn btn-primary"
                         >Submit</button>
                     </form>
                 </div>

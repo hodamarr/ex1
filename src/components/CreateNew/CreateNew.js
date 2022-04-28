@@ -5,7 +5,6 @@ import Loggedin from '../LoggedIn/Loggedin';
 
 
 function CreateNew(props) {
-  console.log("props----", props);
   const userRef = useRef();
   const [user,setUser] = useState('');
   const [nick,setNick] = useState('');
@@ -27,8 +26,9 @@ function CreateNew(props) {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  const isExist = isNameExist(user);
 
-  if(isNameExist(user)){
+  if(isExist){
     setUserErrMsg("This Username is already taken!")
   }
   const nameregex = /^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$/;
@@ -39,7 +39,7 @@ const handleSubmit = async (e) => {
 
   // const nickregex = /^{0 ,15}$/;
   // if (!nickregex.test(nick)){setNickErrMsg("nick max size is 10 letters")}
-  if(!userErrMsg && !nickErrMsg && !passErrMsg){
+  if(!isExist && !nickErrMsg && !passErrMsg){
     props.setUser(user);
     add_user(user,nick,password,pic);
     navigator("/chats");
@@ -58,14 +58,7 @@ const handleSubmit = async (e) => {
               </div>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <input type="text"
-                   className="form-control"
-                    placeholder='User Name'
-                    ref={userRef}
-                     onChange={(e) => setUser(e.target.value)}
-                       value = {user}
-                       required 
-                     ></input> 
+                  <input type="text" className="form-control" placeholder='User Name' ref={userRef} onChange={(e) => setUser(e.target.value)} value = {user} required ></input> 
                      <span>{userErrMsg}</span>
                 </div>
 
@@ -87,7 +80,7 @@ const handleSubmit = async (e) => {
                        <span>{nickErrMsg}</span>
                 </div>
                 <div className="App">
-            <input type="file" onChange={(e)=> {console.log(e.target.files);
+            <input type="file"  accept="image/*" onChange={(e)=> {console.log(e.target.files);
                   setPic(URL.createObjectURL(e.target.files[0]));}}  id="addphoto" required/>
               <br/>
         </div>
