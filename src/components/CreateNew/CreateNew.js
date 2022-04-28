@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { add_user, is_Exist, isNameExist } from '../../users';
+import Loggedin from '../LoggedIn/Loggedin';
 
 
-function CreateNew() {
+function CreateNew(props) {
+  console.log("props----", props);
   const userRef = useRef();
   const [user,setUser] = useState('');
   const [nick,setNick] = useState('');
@@ -12,7 +14,8 @@ function CreateNew() {
   const [userErrMsg, setUserErrMsg] = useState('');  
   const [nickErrMsg, setNickErrMsg] = useState('');  
   const [passErrMsg, setPassErrMsg] = useState('');  
-  const [sucMsg, setSucMsg] = useState(''); 
+  const navigator = useNavigate();
+  const myuser = "";
 
 
 // Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
@@ -37,9 +40,10 @@ const handleSubmit = async (e) => {
   // const nickregex = /^{0 ,15}$/;
   // if (!nickregex.test(nick)){setNickErrMsg("nick max size is 10 letters")}
   if(!userErrMsg && !nickErrMsg && !passErrMsg){
+    
+    props.setUser(user);
     add_user(user,nick,password,pic);
-    setSucMsg("hey" + nick + "now you can log in :)");
-    <Link to="/" className="card-link" id="login">Log In</Link>
+    navigator("/chats");
   }
 }
   return (
@@ -86,12 +90,10 @@ const handleSubmit = async (e) => {
                 <div className="App">
             <input type="file" onChange={(e)=> {console.log(e.target.files);
                   setPic(URL.createObjectURL(e.target.files[0]));}}  id="addphoto" required/>
-            <img src={pic} />
               <br/>
         </div>
 
                <button type="submit" className="btn btn-primary" id="submit">Submit</button>
-               <span>{sucMsg}</span>
               </form>
            </div>
          </div>

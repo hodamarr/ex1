@@ -11,7 +11,7 @@ function LogInScreen(props) {
   const [userErrMsg, setUserErrMsg] = useState('');  
   const [passErrMsg, setPassErrMsg] = useState('');  
   const [suc, setSuc] = useState('');
-    const navi = useNavigate();
+const navi = useNavigate();
 // Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
 // Username allowed of the dot (.), underscore (_), and hyphen (-).
 // The dot (.), underscore (_), or hyphen (-) must not be the first or last character.

@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/chats" element={<Loggedin user={user} />}></Route>
             <Route path="/" element={<LogInScreen setUser={setUser}/>}></Route>
-            <Route path="/register" element={<CreateNew />}></Route>
+            <Route path="/register" element={<CreateNew setUser={setUser}/>}></Route>
           </Routes>
           
         </BrowserRouter>

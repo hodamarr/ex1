@@ -1,13 +1,23 @@
 import ContactItem from "./contactItem/ContactItem";
-import { getNick, getPic } from "../../../users";
+import { getNick, getPic, listOfSortedNames } from "../../../users";
 import { useEffect, useState } from "react";
 
-function Contacts(props) { 
-    console.log('props.contacts', props.contacts);
 
+function Contacts(props) { 
+    const listOfName = listOfSortedNames();
+    const [opt, setOpt] = useState("");
     const nick = getNick(props.user);
     const pic = getPic(props.user);
-    
+
+    function searchInContacts(name) {
+        for (const u of props.contacts){
+        if (u.user === name){
+          return 1;
+        }
+        }
+        return 0;
+      }
+
         return (
             <div style={{ padding: "5px"}}>
     
@@ -20,7 +30,6 @@ function Contacts(props) {
     
                     {(props.contacts || []).map((c, index) => <li key={index} className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
                      <button className=" btn-secondary" style={{width:"100%", backgroundColor:"transparent", display:"flex", borderColor:"transparent"}} onClick={() => {props.onSelectedChat(c.name);
-                    
                       
                      }}> 
                        <ContactItem 
@@ -32,6 +41,8 @@ function Contacts(props) {
                     )}
     
                 </ul>
+
+                
     
 
 
@@ -45,13 +56,17 @@ function Contacts(props) {
                         <div className="modal-body">
                             <form>
                                 <div className="mb-3">
-                                    <input type="text" className="form-control" id="recipient-name" placeholder='Enter Name' ></input>
+                                <select class="form-select" multiple aria-label="multiple select example" onChange={(e) => {const selected = e.target.value;
+                                setOpt(selected);
+                                }}>
+                                {(listOfName || []).map((i, index) => <option value={i}>{getNick(i)}</option>)}
+                                        </select>
                                 </div>
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancle</button>
-                            <button type="button" className="btn btn-primary">Done</button>
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" className="btn btn-primary" onClick={props.onSelectedChat(getNick(opt))} data-bs-dismiss="modal">Done</button>
                         </div>
                     </div>
                 </div>

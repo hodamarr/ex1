@@ -23,10 +23,13 @@ const func = async (props) => {
 
 function Loggedin(props) {
 
+
+
   //const location = useLocation();
   const [chat, setChat] = useState(''); // contains the contact name
   const [contacts, setContacts] = useState([]);
   const [selectedChat, setSelectedChat] = useState({}); // selected chat to display
+
 
   useEffect(() => {
     const f = async () => {

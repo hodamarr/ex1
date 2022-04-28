@@ -6,6 +6,8 @@ import AddVideo from "./addMessageType/AddVideo";
 import AddRecord from "./addMessageType/AddRecord";
 
 function Chat(props) {
+    const openchats = [{"":{}}];
+
     const [pictureInChat, SetPictureInChat] = useState();
     const [showMenu, setShowMenu] = useState(false);
     const userRef = useRef();
