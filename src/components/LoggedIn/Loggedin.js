@@ -66,7 +66,7 @@ function Loggedin(props) {
       <NavBar user={props.user} />
       <div className="row" line-width="100%">
         <div className="col-3" style={{height:"100vh"}} >
-          <Contacts user={props.user} onSelectedChat={setChat} contacts={contacts} setter={u => contacts.push(u)}
+          <Contacts user={props.user} onSelectedChat={setChat} contacts={contacts} setter={(u) => {setContacts([...contacts, u])}}
           />
         </div>
         <div className="col-9" style={{ borderLeftStyle: "solid", borderWidth: "2px", borderColor: "lightGray", height:"100vh",margin:"0px" }}>

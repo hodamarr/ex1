@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 function Contacts(props) { 
     const listOfName = [];
     listOfSortedNames(listOfName);
-
     for(var u of listOfName){
         for (var k of props.contacts){
             var x = k.name
@@ -14,18 +13,18 @@ function Contacts(props) {
                 delete listOfName[listOfName.indexOf(u)];
             }
         }
-    }  
-    console.log("aaaaaaaa", props.contacts);
-
-    const newChat = () => {
-        props.contacts.push({name:getNick(opt), pic:getPic(opt), msgs:[]});
     }
-    console.log("aaaaaaaa", props.contacts);
+    function check_time(c){
+        console.log("c",c);
+        console.log("c....",c.msgs[c.msgs.length - 1].time);
+            if(!c.msgs[c.msgs.length - 1]){
+                return "";
+            }
+             return c.msgs[c.msgs.length - 1].time;
+    }
 
     const [opt, setOpt] = useState("");
     const nick = getNick(props.user);
-    const pic = getPic(props.user);
-
 
         return (
             <div style={{ padding: "5px"}}>
@@ -43,16 +42,15 @@ function Contacts(props) {
                      }}> 
                        <ContactItem 
                        {...c} 
-                       time={c.msgs[c.msgs.length - 1].time}
+                       time={c.msgs.length> 0 ? c.msgs[c.msgs.length-1].time : "" } 
+                       
                     />
+                     
                      </button>
                     </li>
                     )}
     
                 </ul>
-
-                
-    
 
 
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -75,7 +73,7 @@ function Contacts(props) {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" className="btn btn-primary" onClick={() => {props.setter({name:getNick(opt), pic:getPic(opt), msgs:[]})}} data-bs-dismiss="modal">Done</button>
+                            <button type="button" className="btn btn-primary" onClick={() => {props.setter({name:getNick(opt), pic:getPic(opt), msgs:[]})} } data-bs-dismiss="modal">Done</button>
                         </div>
                     </div>
                 </div>
