@@ -7,12 +7,10 @@ const users =
     {name: "Zahava1415", nick:"Zehava Ben", pass:"a1234567", pic:"userphoto/zehava1.png"}
 ]
 
-export function listOfSortedNames(){
-    var arr = [];
+export function listOfSortedNames(arr){
     for(const u of users){
         arr.push(u.name);
     }
-    return arr.sort(); 
 }
 
 export function add_user(_name, _nick, _pass, _pic){

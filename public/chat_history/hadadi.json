@@ -1,7 +1,7 @@
 {
     "contacts" :[
         {
-            "name":"Um-Coltom",
+            "name":"UM-COLTOM",
             "pic":"userphoto/um_koltom.jpeg",
             "msgs":[
                 {
@@ -18,27 +18,6 @@
 
                 {
                     "time":"20:50", "self":true, "type":"audio", "content":"youAreAwesome.mp3"
-                }
-            ]
-        },
-        {
-            "name":"Eden ben zaken",
-            "pic":"userphoto/eden1994.jpeg",
-            "msgs":[
-                {
-                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
-                },
-
-                {
-                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
-                },
-
-                {
-                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
-                },
-
-                {
-                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
                 }
             ]
         },
@@ -83,30 +62,6 @@
                     "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
                 }
             ]
-        },
-        {
-            "name":"Ofra Haza",
-            "pic":"userphoto/offrahaz.jpeg",
-            "msgs":[
-                {
-                    "time":"20:35", "self":true, "type":"txt", "content":"hey its sahhhhrit hadad"
-                },
-
-                {
-                    "time":"20:37", "self":true, "type":"txt", "content":"answer mhheeeeee"
-                },
-
-                {
-                    "time":"20:45", "self":false, "type":"txt", "content":"hey mhhhami"
-                },
-
-                {
-                    "time":"20:50", "self":true, "type":"txt", "content":"how hhare u?"
-                }
-            ]
-        }
-
-
-        
+        }   
     ]
 }

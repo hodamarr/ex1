@@ -40,7 +40,6 @@ const handleSubmit = async (e) => {
   // const nickregex = /^{0 ,15}$/;
   // if (!nickregex.test(nick)){setNickErrMsg("nick max size is 10 letters")}
   if(!userErrMsg && !nickErrMsg && !passErrMsg){
-    
     props.setUser(user);
     add_user(user,nick,password,pic);
     navigator("/chats");

@@ -4,19 +4,28 @@ import { useEffect, useState } from "react";
 
 
 function Contacts(props) { 
-    const listOfName = listOfSortedNames();
+    const listOfName = [];
+    listOfSortedNames(listOfName);
+
+    for(var u of listOfName){
+        for (var k of props.contacts){
+            var x = k.name
+            if(x === getNick(u)){
+                delete listOfName[listOfName.indexOf(u)];
+            }
+        }
+    }  
+    console.log("aaaaaaaa", props.contacts);
+
+    const newChat = () => {
+        props.contacts.push({name:getNick(opt), pic:getPic(opt), msgs:[]});
+    }
+    console.log("aaaaaaaa", props.contacts);
+
     const [opt, setOpt] = useState("");
     const nick = getNick(props.user);
     const pic = getPic(props.user);
 
-    function searchInContacts(name) {
-        for (const u of props.contacts){
-        if (u.user === name){
-          return 1;
-        }
-        }
-        return 0;
-      }
 
         return (
             <div style={{ padding: "5px"}}>
@@ -28,7 +37,7 @@ function Contacts(props) {
                         <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{float:"right" }} > New + </button>
                     </span>
     
-                    {(props.contacts || []).map((c, index) => <li key={index} className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
+                    {(props.contacts).map((c, index) => <li key={index} className="nav-item" style={{ lineHeight: "80px", borderBottomStyle:"solid", borderWidth:"2px", borderColor:"lightGray" }} >
                      <button className=" btn-secondary" style={{width:"100%", backgroundColor:"transparent", display:"flex", borderColor:"transparent"}} onClick={() => {props.onSelectedChat(c.name);
                       
                      }}> 
@@ -66,7 +75,7 @@ function Contacts(props) {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" className="btn btn-primary" onClick={props.onSelectedChat(getNick(opt))} data-bs-dismiss="modal">Done</button>
+                            <button type="button" className="btn btn-primary" onClick={() => {props.setter({name:getNick(opt), pic:getPic(opt), msgs:[]})}} data-bs-dismiss="modal">Done</button>
                         </div>
                     </div>
                 </div>
