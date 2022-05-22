@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 
+async function requestRecorder() {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  return new MediaRecorder(stream);
+}
+
 const useRecorder = () => {
   const [audioURL, setAudioURL] = useState("");
   const [isRecording, setIsRecording] = useState(false);
@@ -27,6 +32,8 @@ const useRecorder = () => {
     };
 
     recorder.addEventListener("dataavailable", handleData);
+
+    // Cleanup
     return () => recorder.removeEventListener("dataavailable", handleData);
   }, [recorder, isRecording]);
 
@@ -41,8 +48,4 @@ const useRecorder = () => {
   return [audioURL, isRecording, startRecording, stopRecording];
 };
 
-async function requestRecorder() {
-  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  return new MediaRecorder(stream);
-}
 export default useRecorder;

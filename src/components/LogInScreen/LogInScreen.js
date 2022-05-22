@@ -1,16 +1,13 @@
-import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import CreateNew from '../CreateNew/CreateNew';
-import Loggedin from '../LoggedIn/Loggedin';
-import { useState, useRef } from 'react';
-import { is_Exist, add_user } from '../../users'
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { is_Exist } from '../../users'
+
 function LogInScreen(props) {
 
-    const userRef = useRef();
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
     const [userErrMsg, setUserErrMsg] = useState('');
     const [passErrMsg, setPassErrMsg] = useState('');
-    const [suc, setSuc] = useState('');
     const navi = useNavigate();
     // Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
     // Username allowed of the dot (.), underscore (_), and hyphen (-).
@@ -30,21 +27,14 @@ function LogInScreen(props) {
 
         if (!userErrMsg && !passErrMsg) {
             let check = is_Exist(user, password)
-            switch (check) {
-                case 1:
-                    setSuc(true);
-                    props.setUser(user);
-                    navi('/chats');
-                    break;
-                case -1:
-                    setPassErrMsg("Wrong Password!")
-                    break;
-                case 0:
-                    setUserErrMsg("Username doesn't exist!")
-                    break;
-
+            if (check === 1) {
+                props.setUser(user);
+                navi('/chats');
+            } else if (check === -1) {
+                setPassErrMsg("Wrong Password!")
+            } else if (check === 0) {
+                setUserErrMsg("Username doesn't exist!")
             }
-
         }
     }
 
@@ -52,7 +42,10 @@ function LogInScreen(props) {
         <div className="container-fluid" style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
             <div className="card" style={{ width: '600px', display: 'flex', marginRight: '10px' }}>
                 <div className="card-body">
-                    <h1 className="card-title">Welcome Back<span id="dot">.</span></h1>
+                    <h1 className="card-title">
+                        Welcome Back
+                        <span id="dot">.</span>
+                    </h1>
                     <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '10px' }}>
                         <span className="card-subtitle mb-2 text-muted" style={{ marginRight: '5px' }}>Not A Member?</span>
                         <Link to="/register" className="card-link" id="login">Sign Up</Link>
@@ -61,31 +54,27 @@ function LogInScreen(props) {
                         <div className="mb-3">
                             <input type="text"
                                 className="form-control"
-                                placeholder='User Name'
-                                ref={userRef}
+                                placeholder="User Name"
                                 onChange={(e) => setUser(e.target.value)}
                                 value={user}
-                                required
-                            ></input>
+                                required/>
                             <span>{userErrMsg}</span>
                         </div>
                         <div className="mb-3">
                             <input type="password" className="form-control" placeholder='Password'
-                                ref={userRef}
                                 onChange={(e) => setPassword(e.target.value)}
                                 value={password}
-                                required
-                            ></input>
-                            <span>{passErrMsg}<br></br></span>
+                                required/>
+                            <span>{passErrMsg}
+                                <br/>
+                            </span>
                         </div>
-
-                        <button type="submit" className="btn btn-primary"
-                        >Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
-
         </div>
     );
 }
+
 export default LogInScreen;

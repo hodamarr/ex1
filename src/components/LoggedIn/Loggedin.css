@@ -15,20 +15,20 @@
 
 #chats {
   display: flex;
-  direction: row;
+  flex-direction: row;
   font-size: 30px;
   justify-content: space-between;
 }
 
-#add{
+#add {
   margin-left: 30px;
 }
 
-#laseen{
+#laseen {
   text-align: end;
 }
 
-.container{
+.container {
   max-width: 100%;
-  padding:"0px";
+  padding: 0px;
 }

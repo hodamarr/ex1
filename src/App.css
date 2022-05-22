@@ -1,8 +1,7 @@
 
 
-*{
+* {
   color : black;
-
 }
 
 .container {
@@ -31,7 +30,6 @@
 
 .h1 {
   font-size: x-large;
-  
 }
 
 #login {

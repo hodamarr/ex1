@@ -1,9 +1,7 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 function AddImage(props) {
     const [pictureInChat, setPictureInChat] = useState();
-
-    const userRef = useRef();
 
     return (
         <div className="modal fade" id="ImagePick" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -16,9 +14,8 @@ function AddImage(props) {
                     <div className="modal-body">
                         <form>
                             <div className="mb-3">
-                                <input className="form-control" accept="image/*" type="file" id="imageFile" ref={userRef}
-                                    onChange={(e) => { setPictureInChat(URL.createObjectURL(e.target.files[0])); }}
-                                ></input>
+                                <input className="form-control" accept="image/*" type="file" id="imageFile"
+                                    onChange={(e) => setPictureInChat(URL.createObjectURL(e.target.files[0]))}/>
                             </div>
                         </form>
                     </div>
@@ -29,6 +26,7 @@ function AddImage(props) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
 export default AddImage;
